@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AquaCrawBabies — Dwarf Crawfish & Mystery Snails</title>
+  <meta name="description" content="All-female, self-cloning dwarf crawfish and colorful mystery snail variants. Care guides, mystery packs, and live arrival guarantee." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#050507; /* near black */
+      --card:#0b0b0d;
+      --muted:#9aa0a6;
+      --accent:#00d4a6; /* mint */
+      --accent-2:#5bd3ff; /* cyan */
+      --glass: rgba(255,255,255,0.03);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background:linear-gradient(180deg,var(--bg),#07070a);
+      color:#e6eef1;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+    header{
+      display:flex;align-items:center;justify-content:space-between;padding:20px 32px;border-bottom:1px solid rgba(255,255,255,0.03);
+      position:sticky;top:0;background:linear-gradient(180deg,rgba(5,6,7,0.7),rgba(5,6,7,0.45));backdrop-filter:blur(6px);z-index:50
+    }
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{
+      width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:800;color:#031015;font-size:18px;letter-spacing:-0.5px;
+      box-shadow:0 6px 18px rgba(0,212,166,0.12), inset 0 -6px 20px rgba(255,255,255,0.02);
+    }
+    .site-title{font-weight:700}
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px}
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:48px 32px}
+    .hero-left h1{font-size:40px;margin:0 0 8px}
+    .hero-left p{color:var(--muted);margin:0 0 18px}
+    .cta{display:flex;gap:12px}
+    .btn{background:var(--accent);color:#03231f;padding:12px 18px;border-radius:10px;border:none;font-weight:700;cursor:pointer}
+    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+    .card{background:var(--card);padding:18px;border-radius:14px;box-shadow:0 6px 18px rgba(3,5,7,0.6);}
+    .product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;padding:28px 32px}
+    .product{padding:14px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border:1px solid rgba(255,255,255,0.02)}
+    .product img{width:100%;height:140px;object-fit:cover;border-radius:10px}
+    .price{font-weight:700}
+    footer{padding:28px 32px;color:var(--muted);border-top:1px solid rgba(255,255,255,0.03);margin-top:32px}
+
+    /* badges */
+    .badge{display:inline-block;padding:6px 8px;border-radius:999px;font-size:12px;background:linear-gradient(90deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.02);color:var(--muted)}
+
+    /* cart drawer */
+    .cart-drawer{position:fixed;right:18px;bottom:18px;width:360px;max-width:92vw;border-radius:12px;background:linear-gradient(180deg,#061015, #071217);padding:12px;box-shadow:0 10px 34px rgba(3,6,7,0.6);border:1px solid rgba(255,255,255,0.04)}
+    .cart-list{max-height:220px;overflow:auto;padding-right:8px}
+    .cart-item{display:flex;gap:10px;align-items:center;padding:8px 0;border-bottom:1px dashed rgba(255,255,255,0.03)}
+
+    /* responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      header{padding:12px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">ACB</div>
+      <div>
+        <div class="site-title">AquaCrawBabies</div>
+        <div style="font-size:12px;color:var(--muted)">Dwarf crawfish & mystery snails — live arrival guarantee</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#products">Products</a>
+      <a href="#care">Care</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <button class="btn" id="open-shop">Shop</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-left">
+        <h1>All-female, self-cloning dwarf crawfish — tiny, hardy, adorable.</h1>
+        <p>We breed compact dwarf crawfish that reproduce by parthenogenesis (all female). Perfect for nano tanks, planted setups, and shrimp/small-fish community tanks. Also offering colorful mystery snail variants and curated starter kits.</p>
+        <div class="cta">
+          <button class="btn" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Browse mystery packs</button>
+          <button class="btn ghost" onclick="document.getElementById('care').scrollIntoView({behavior:'smooth'})">Care guide</button>
+        </div>
+
+        <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
+          <span class="badge">Live arrival guarantee</span>
+          <span class="badge">All female — parthenogenic</span>
+          <span class="badge">Local pickup & insured shipping</span>
+        </div>
+      </div>
+
+      <aside class="card">
+        <h3 style="margin:0 0 8px">Starter Pack — Nano Tank Ready</h3>
+        <p style="color:var(--muted);margin:0 0 12px">Includes: 6 dwarf crawfish (mixed variants), 2 mystery snails (random colors), care card.</p>
+        <div style="display:flex;gap:10px;align-items:center">
+          <div style="font-size:22px;font-weight:800">$34</div>
+          <button class="btn" onclick="addToCart('Starter Pack',34)">Add to cart</button>
+        </div>
+        <ul style="margin-top:12px;color:var(--muted);padding-left:18px">
+          <li>Free local pickup</li>
+          <li>Shipping: Insulated overnight (where available)</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section id="products">
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 32px">
+        <h2 style="margin:0">Products</h2>
+        <div style="color:var(--muted)">Showing curated variants & mystery packs</div>
+      </div>
+
+      <div class="product-grid">
+
+        <!-- Product: Dwarf Crawfish -->
+        <div class="product">
+          <img src="https://images.unsplash.com/photo-1518972559570-6de9b6d8b6d8?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Dwarf crawfish">
+          <h3 style="margin:10px 0 6px">Dwarf Crawfish — Mixed Variants</h3>
+          <div style="color:var(--muted);font-size:13px;margin-bottom:8px">All female — parthenogenic (self-cloning). Compact size 1"–1.5".</div>
+          <div style="display:flex;justify-content:space-between;align-items:center"><div class="price">$6 each</div><button class="btn" onclick="addToCart('Dwarf Crawfish',6)">Add</button></div>
+        </div>
+
+        <!-- Product: Mystery Snail -->
+        <div class="product">
+          <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="mystery snail">
+          <h3 style="margin:10px 0 6px">Mystery Snail — Color Variants</h3>
+          <div style="color:var(--muted);font-size:13px;margin-bottom:8px">Assorted shell colors: gold, blue, ivory, zebra. Pick single or mystery mix.</div>
+          <div style="display:flex;justify-content:space-between;align-items:center"><div class="price">$5 each</div><button class="btn" onclick="addToCart('Mystery Snail',5)">Add</button></div>
+        </div>
+
+        <!-- Product: Mini Colony -->
+        <div class="product">
+          <img src="https://images.unsplash.com/photo-1483729558449-99ef09a8c325?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="colony">
+          <h3 style="margin:10px 0 6px">Mini Colony — 12 Dwarf Crawfish</h3>
+          <div style="color:var(--muted);font-size:13px;margin-bottom:8px">Great for small planted tanks (10–20 gallons).</div>
+          <div style="display:flex;justify-content:space-between;align-items:center"><div class="price">$60</div><button class="btn" onclick="addToCart('Mini Colony',60)">Add</button></div>
+        </div>
+
+        <!-- Product: Mystery Pack -->
+        <div class="product">
+          <img src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="mystery pack">
+          <h3 style="margin:10px 0 6px">Mystery Pack</h3>
+          <div style="color:var(--muted);font-size:13px;margin-bottom:8px">Random mix of crawfish & snails — great for gifts and variety seekers.</div>
+          <div style="display:flex;justify-content:space-between;align-items:center"><div class="price">$28</div><button class="btn" onclick="addToCart('Mystery Pack',28)">Add</button></div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="care" style="padding:22px 32px">
+      <h2>Care Guide — quick essentials</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:12px">
+        <div class="card">
+          <h4 style="margin:0 0 6px">Tank Setup</h4>
+          <p style="color:var(--muted);margin:0">10+ gallon recommended for stable parameters. Plenty of hiding spots (plants, coconut caves). Fine sand or smooth substrate.</p>
+        </div>
+        <div class="card">
+          <h4 style="margin:0 0 6px">Water & Parameters</h4>
+          <p style="color:var(--muted);margin:0">Temperature: 68–78°F (20–25°C). pH: 6.8–8.2. Gentle filtration — avoid strong currents. Weekly small water changes.</p>
+        </div>
+        <div class="card">
+          <h4 style="margin:0 0 6px">Feeding</h4>
+          <p style="color:var(--muted);margin:0">Algae wafers, blanched veggies, sinking pellets. Feed lightly — remove uneaten food within 24 hours.</p>
+        </div>
+        <div class="card">
+          <h4 style="margin:0 0 6px">Breeding & Notes</h4>
+          <p style="color:var(--muted);margin:0">These dwarf crawfish reproduce by parthenogenesis: all individuals produce offspring without mating. Colonies can grow quickly — consider spacing and population control.</p>
+        </div>
+      </div>
+
+      <div style="margin-top:14px;color:var(--muted);font-size:13px">Full care PDF, quarantining steps, and live arrival prep included with every order.</div>
+    </section>
+
+    <section id="about" style="padding:22px 32px">
+      <h2>About AquaCrawBabies</h2>
+      <p style="color:var(--muted)">A small, family-run breeder specializing in hardy dwarf crawfish and attractive mystery snail variants. We prioritize animal welfare, safe shipping, and clear care information so your new pets thrive.</p>
+    </section>
+
+    <section id="contact" style="padding:22px 32px">
+      <h2>Contact & Orders</h2>
+      <div style="display:grid;grid-template-columns:1fr 320px;gap:18px">
+        <div class="card">
+          <form id="contactForm" onsubmit="event.preventDefault(); alert('Thanks! We received your message — we\'ll reply by email.');">
+            <label style="display:block;margin-bottom:6px;color:var(--muted)">Your name</label>
+            <input required style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit" />
+
+            <label style="display:block;margin-top:10px;margin-bottom:6px;color:var(--muted)">Email</label>
+            <input required type="email" style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit" />
+
+            <label style="display:block;margin-top:10px;margin-bottom:6px;color:var(--muted)">Message</label>
+            <textarea required style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit" rows="4"></textarea>
+
+            <div style="margin-top:12px"><button class="btn" type="submit">Send message</button></div>
+          </form>
+        </div>
+
+        <aside class="card">
+          <h4 style="margin:0 0 8px">Ordering & Shipping</h4>
+          <p style="color:var(--muted);margin:0 0 8px">We offer local pickup (recommended) and insured overnight shipping to contiguous states where legal. Live arrival guarantee — contact us within 12 hours of delivery with photos if there's an issue.</p>
+          <div style="margin-top:12px"><strong style="color:var(--muted)">Note:</strong> Check local regulations before ordering live invertebrates. Prices and availability may vary by region.</div>
+        </aside>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+      <div>© <strong>AquaCrawBabies</strong> — responsibly bred. All images placeholders.</div>
+      <div style="color:var(--muted);font-size:13px">Want this site exported as HTML file or a React component? Tell me — I can export.</div>
+    </div>
+  </footer>
+
+  <!-- Cart drawer (simple client-side) -->
+  <div class="cart-drawer" id="cartDrawer">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+      <strong>Cart</strong>
+      <button class="btn ghost" onclick="checkout()">Checkout</button>
+    </div>
+    <div class="cart-list" id="cartList"></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:10px">
+      <div style="color:var(--muted)">Total:</div>
+      <div id="cartTotal" style="font-weight:800">$0</div>
+    </div>
+  </div>
+
+  <script>
+    // Simple cart (client only) — replace with real e-commerce integration when ready
+    const cart = [];
+    function addToCart(name,price){
+      cart.push({name,price});
+      renderCart();
+      // small animation
+      const btn = event.currentTarget;
+      btn.textContent = 'Added';
+      setTimeout(()=>btn.textContent='Add',900);
+    }
+    function renderCart(){
+      const list = document.getElementById('cartList');
+      list.innerHTML = '';
+      let total = 0;
+      cart.forEach((item, i)=>{
+        total += item.price;
+        const el = document.createElement('div');
+        el.className='cart-item';
+        el.innerHTML = `<div style='flex:1'><div style='font-weight:700'>${escapeHtml(item.name)}</div><div style='color:var(--muted);font-size:13px'>$${item.price.toFixed(2)}</div></div><div><button class='btn' onclick='removeItem(${i})'>Remove</button></div>`;
+        list.appendChild(el);
+      });
+      document.getElementById('cartTotal').textContent = `$${total.toFixed(2)}`;
+    }
+    function removeItem(i){ cart.splice(i,1); renderCart(); }
+    function checkout(){
+      if(cart.length===0){ alert('Your cart is empty.'); return; }
+      alert('Thanks — this demo site does not process payments. Use the contact form to place an order or request an invoice.');
+    }
+    function escapeHtml(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+    // Small accessibility: keyboard shortcut 'c' to focus contact
+    document.addEventListener('keydown', e=>{ if(e.key.toLowerCase()==='c'){ document.getElementById('contact').scrollIntoView({behavior:'smooth'}); } });
+  </script>
+</body>
+</html>
